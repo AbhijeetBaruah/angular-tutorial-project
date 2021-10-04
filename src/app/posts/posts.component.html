@@ -1,6 +1,7 @@
 <input type="text" (keyup.enter)="createPost(data)" #data>
 <ul class="list-group">
     <li *ngFor="let post of posts" class="list-group-item">
-        {{post.title}} | {{post.userId}}
+        {{post.title}} | {{post.userId}} |
+        <a [routerLink]="['profile',post.userId]">profile</a>
     </li>
 </ul>
