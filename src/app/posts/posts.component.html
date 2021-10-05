@@ -2,6 +2,6 @@
 <ul class="list-group">
     <li *ngFor="let post of posts" class="list-group-item">
         {{post.title}} | {{post.userId}} |
-        <a [routerLink]="['profile',post.userId]">profile</a>
+        <a [routerLink]="['profile',post.userId,post.id]" [queryParams]="{ page:1,order:'newest'}">profile</a>
     </li>
 </ul>

@@ -8,7 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   {path:'',component:PostsComponent},
   {path:'followers',component:FollowersComponent},
-  {path:'profile/:userId',component:ProfileComponent},
+  {path:'profile/:userId/:id',component:ProfileComponent},
   {path:'**',component:PageNotFoundComponent}
 
 ];
