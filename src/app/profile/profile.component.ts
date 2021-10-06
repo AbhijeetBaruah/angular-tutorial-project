@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { combineLatest} from 'rxjs';
 import { PostService } from '../services/post.service';
 // import 'rxjs/add/operator/map';
 // import 'rxjs/add/operator/switchMap';
 import { switchMap } from 'rxjs/operators';
+
 
 
 
@@ -17,7 +18,7 @@ export class ProfileComponent implements OnInit {
 
   posts:any[''];
   postss:any[''];
-  constructor(private route:ActivatedRoute,private postService:PostService) { }
+  constructor(private route:ActivatedRoute,private postService:PostService,private router:Router) { }
 
   ngOnInit(): void {
 
@@ -75,6 +76,21 @@ export class ProfileComponent implements OnInit {
         
     })
     
+  }
+
+  submit(){
+    console.clear();
+    console.log("submit button");
+    
+    //if there are any required parameters along with queryparameters
+    // this.router.navigate(['/followers',1,2,3],{
+    //   queryParams:{page:1,something:'helloThere'}
+    // })
+
+    //if only query parameters are there
+    this.router.navigate(['/followers'],{
+      queryParams:{page:1,something:'helloThere'}
+    })
   }
 
 }
